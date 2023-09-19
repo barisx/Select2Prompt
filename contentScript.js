@@ -10,7 +10,7 @@ function transferSelectedTextToTextarea() {
       const selectedText = window.getSelection().toString();
 
       if (selectedText) {
-        textArea.value = selectedText + '\n';
+        textArea.value = selectedText + '\n\n';
         textArea.focus();
         textArea.scrollTop = textArea.scrollHeight;
       }
