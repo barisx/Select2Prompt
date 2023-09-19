@@ -1,5 +1,8 @@
 ### **Select2Prompt**
 
+![2023-09-19 10-29-01 (online-video-cutter com)](https://github.com/barisx/Select2Prompt/assets/58127640/216945c9-df4d-475f-befd-87be94f46283)
+
+
 #### **Description**
 
 **Select2Prompt** is a Chrome extension designed to enhance the productivity of developers and prompt engineers by facilitating a seamless text transfer process. With this extension, any text selected on a webpage is automatically added to a designated textarea, followed by a focus shift to the last line of the input, ready for your next entry.
