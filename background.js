@@ -1,10 +1,26 @@
-chrome.action.onClicked.addListener((tab) => {
+function rejectChromeTab(tab) {
+  // skip urls like "chrome://" to avoid extension error
+if (tab.url?.startsWith("chrome://")) return undefined;
+}
+
+chrome.tabs.onActivated.addListener((tabId, changeInfo, tab) => {
+  rejectChromeTab(tab);
+  console.log(tab.url)
     chrome.scripting.executeScript({
-      function: transferSelectedTextToTextarea,
+      target: { tabId: tabId },
+      files: ['contentScript.js']
     });
-  });
-  
-  function transferSelectedTextToTextarea() {
-    // The content script function will be injected here
-  }
-  
+});
+
+
+chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+  rejectChromeTab(tab);
+  console.log(tab.url)
+
+    chrome.scripting.executeScript({
+      target: { tabId: tabId },
+      files: ['contentScript.js']
+    });
+});
+
+

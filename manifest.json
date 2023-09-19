@@ -3,7 +3,7 @@
   "name": "Select2Prompt",
   "version": "1.0",
   "description": "Automatically transfers selected text to a designated textarea and focuses on the last line.",
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "tabs", "scripting"],
   "background": {
     "service_worker": "background.js"
   },
@@ -21,6 +21,9 @@
       "js": ["contentScript.js"]
     }
   ],
+  "host_permissions": [
+        "https://chat.openai.com/*"
+    ],
   "icons": {
     "16": "images/icon16.png",
     "48": "images/icon48.png",
