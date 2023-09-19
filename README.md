@@ -1,28 +1,26 @@
-### **Select2Prompt**
+### **Select2Prompt Chrome Extension**
 
 ![2023-09-19 10-29-01 (online-video-cutter com)](https://github.com/barisx/Select2Prompt/assets/58127640/216945c9-df4d-475f-befd-87be94f46283)
 
-
 #### **Description**
 
-**Select2Prompt** is a Chrome extension designed to enhance the productivity of developers and prompt engineers by facilitating a seamless text transfer process. With this extension, any text selected on a webpage is automatically added to a designated textarea, followed by a focus shift to the last line of the input, ready for your next entry.
+"Select2Prompt" is a Chrome extension designed to enhance your productivity by providing an **instant copy** feature for selected text directly into a designated textarea, coupled with a smart **prompt** functionality that focuses on the last line, ready for your next input.
 
 #### **Features**
 
-- **Instant Text Transfer**: Automatically transfers your selected text to the specified textarea.
-- **Auto Focus**: After the transfer, the focus shifts to the last line of the textarea, ready for your next input.
-- **New Line Character**: Each transferred text entry is followed by a newline character, helping you maintain a clean and organized input area.
+- **Instant Copy**: Simply select text on any webpage (except the designated textarea) and it will automatically be transferred to the designated textarea, streamlining your text transfer process.
+- **Prompt**: After the transfer, the focus automatically shifts to the last line of the textarea, setting a convenient starting point for your next entry.
 
 #### **How to Use**
 
-1. **Install the Extension**: Download and install the extension from the repository.
-2. **Select Text**: Simply select the text you want to transfer on any webpage.
-3. **Automatic Transfer**: The selected text will automatically appear in the textarea with the ID `prompt-textarea`.
-4. **Ready to Input**: The focus will shift to the last line of the textarea, ready for your next entry.
+1. **Install the Extension**: Download and install "Select2Prompt" from the Chrome Web Store.
+2. **Designate a Textarea**: On your webpage, designate a textarea with the ID `prompt-textarea` to receive the transferred text.
+3. **Select Text**: Highlight the text you wish to transfer on any webpage.
+4. **Automatic Transfer**: The selected text will automatically appear in the designated textarea, with the cursor positioned on the last line, ready for your next entry.
 
 #### **Setup**
 
-To set up the textarea to receive the transferred text, add a textarea element with the ID `prompt-textarea` to your webpage:
+To set up the designated textarea on your webpage, add a textarea element with the ID `prompt-textarea`:
 
 ```html
 <textarea id="prompt-textarea"></textarea>
