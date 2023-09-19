@@ -2,7 +2,11 @@ function transferSelectedTextToTextarea() {
   const textArea = document.getElementById('prompt-textarea');
 
   if (textArea) {
-    document.body.addEventListener('mouseup', () => {
+    document.body.addEventListener('mouseup', (event) => {
+      if (event.target.id === 'prompt-textarea') {
+        return;
+      }
+
       const selectedText = window.getSelection().toString();
 
       if (selectedText) {

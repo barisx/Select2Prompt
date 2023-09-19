@@ -1,26 +1,26 @@
 function rejectChromeTab(tab) {
-  // skip urls like "chrome://" to avoid extension error
-if (tab.url?.startsWith("chrome://")) return undefined;
+  // Only allow script injection on pages with URLs matching 'https://chat.openai.com/*'
+  if (!tab.hasOwnProperty("url")) return true;
+  if (!tab.url.startsWith('https://chat.openai.com/')) return true;
+  return false;
 }
 
-chrome.tabs.onActivated.addListener((tabId, changeInfo, tab) => {
-  rejectChromeTab(tab);
-  console.log(tab.url)
+chrome.tabs.onActivated.addListener((activeInfo) => {
+  chrome.tabs.get(activeInfo.tabId, (tab) => {
+    if (rejectChromeTab(tab)) return;
+
     chrome.scripting.executeScript({
-      target: { tabId: tabId },
+      target: { tabId: activeInfo.tabId },
       files: ['contentScript.js']
     });
+  });
 });
-
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  rejectChromeTab(tab);
-  console.log(tab.url)
+  if (rejectChromeTab(tab)) return;
 
-    chrome.scripting.executeScript({
-      target: { tabId: tabId },
-      files: ['contentScript.js']
-    });
+  chrome.scripting.executeScript({
+    target: { tabId: tabId },
+    files: ['contentScript.js']
+  });
 });
-
-
