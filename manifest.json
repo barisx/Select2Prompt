@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Select2Prompt",
-  "version": "1.0",
+  "version": "1.1.1",
   "description": "Automatically transfers selected text to a designated textarea and focuses on the last line.",
   "permissions": ["activeTab", "tabs", "scripting"],
   "background": {
